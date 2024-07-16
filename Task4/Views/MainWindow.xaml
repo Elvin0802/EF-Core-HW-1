@@ -1,0 +1,96 @@
+﻿<Window x:Class="Task4.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task4.Views"
+        mc:Ignorable="d"
+        
+        Height="600" 
+        Width="800"
+        Title="Car Manager"
+        FontSize="20"
+        Background="Beige"
+        >
+
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <ListView Grid.Column="0"
+                  Margin="20">
+
+        </ListView>
+
+        <StackPanel Grid.Column="1"
+                    Margin="10">
+
+            <StackPanel Margin="5">
+                <TextBlock Text="Make"/>
+
+                <TextBox x:Name="MakeTB"/>
+
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <TextBlock Text="Model"/>
+
+                <TextBox x:Name="ModelTB"/>
+
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <TextBlock Text="Year"/>
+
+                <TextBox x:Name="YearTB"/>
+
+            </StackPanel>
+
+            <StackPanel Margin="5">
+                <TextBlock Text="St. Number"/>
+
+                <TextBox x:Name="StNumTB"/>
+
+            </StackPanel>
+
+            <StackPanel Margin="10">
+
+                <Button Content="Add"
+                        Name="AddCarBtn"
+                        Width="180"
+                        Height="40"
+                        Margin="10"
+                        FontSize="24"
+                        Background="Black"
+                        Foreground="Orange"
+                        Click="AddCarBtnExecute"/>
+
+                <Button Content="Update"
+                        Name="UpdateCarBtn"
+                        Width="180"
+                        Height="40"
+                        Margin="10"
+                        FontSize="24"
+                        Background="Black"
+                        Foreground="Orange"
+                        Click="UpdateCarBtnExecute"/>
+
+                <Button Content="Delete"
+                        Name="DeleteCarBtn"
+                        Width="180"
+                        Height="40"
+                        Margin="10"
+                        FontSize="24"
+                        Background="Black"
+                        Foreground="Orange"
+                        Click="DeleteCarBtnExecute"/>
+
+            </StackPanel>
+
+        </StackPanel>
+
+    </Grid>
+</Window>
