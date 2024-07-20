@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         
         Height="600" 
-        Width="800"
+        Width="1000"
         Title="Car Manager"
         FontSize="20"
         Background="Beige"
@@ -17,46 +17,81 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5*"/>
-            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
-        <ListView Grid.Column="0"
-                  Margin="20">
 
+        <ListView Grid.Column="0"
+                  Margin="20"
+                  x:Name="CarsLW"
+                  SelectionChanged="CarsLW_SelectionChanged">
+            
+            <ListView.View>
+                <GridView>
+
+                    <GridViewColumn Width="160" 
+                                    Header="Make"
+                                    DisplayMemberBinding="{Binding Make, 
+                                    UpdateSourceTrigger=PropertyChanged}">
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="160" 
+                                    Header="Model"
+                                    DisplayMemberBinding="{Binding Model, 
+                                    UpdateSourceTrigger=PropertyChanged}">
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="160" 
+                                    Header="Year"
+                                    DisplayMemberBinding="{Binding Year, 
+                                    UpdateSourceTrigger=PropertyChanged}">
+                    </GridViewColumn>
+
+                    <GridViewColumn Width="160" 
+                                    Header="StNumber"
+                                    DisplayMemberBinding="{Binding StNumber, 
+                                    UpdateSourceTrigger=PropertyChanged}">
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
         </ListView>
 
         <StackPanel Grid.Column="1"
-                    Margin="10">
+                    Margin="10 30 10 10">
 
             <StackPanel Margin="5">
                 <TextBlock Text="Make"/>
 
-                <TextBox x:Name="MakeTB"/>
+                <TextBox x:Name="MakeTB"
+                         TextChanged="TB_TextChanged"/>
 
             </StackPanel>
 
             <StackPanel Margin="5">
                 <TextBlock Text="Model"/>
 
-                <TextBox x:Name="ModelTB"/>
+                <TextBox x:Name="ModelTB"
+                         TextChanged="TB_TextChanged"/>
 
             </StackPanel>
 
             <StackPanel Margin="5">
                 <TextBlock Text="Year"/>
 
-                <TextBox x:Name="YearTB"/>
+                <DatePicker x:Name="YearDP"/>
 
             </StackPanel>
 
             <StackPanel Margin="5">
                 <TextBlock Text="St. Number"/>
 
-                <TextBox x:Name="StNumTB"/>
+                <TextBox x:Name="StNumTB"
+                         TextChanged="TB_TextChanged"/>
 
             </StackPanel>
 
-            <StackPanel Margin="10">
+            <StackPanel Margin="5 30 10 10">
 
                 <Button Content="Add"
                         Name="AddCarBtn"
